@@ -1,0 +1,33 @@
+Source: libyubikey
+Priority: optional
+Maintainer: Tollef Fog Heen <tfheen@debian.org>
+Build-Depends: debhelper (>= 8), autotools-dev, dh-autoreconf
+Standards-Version: 3.8.0
+Section: libs
+Homepage: http://code.google.com/p/yubico-c/
+
+Package: libyubikey-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libyubikey0 (= ${binary:Version})
+Description: Yubikey OTP library development files
+ Yubikeys are USB tokens that act like keyboards and generate one-time
+ passwords.  The tokens are produced and sold by Yubico
+ .
+ This library is used for decrypting the one-time passwords into their
+ various components.
+ .
+ This package contains the necessary files for developing using libyubikey.
+
+Package: libyubikey0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Yubikey OTP handling library runtime
+ Yubikeys are USB tokens that act like keyboards and generate one-time
+ passwords.  The tokens are produced and sold by Yubico
+ .
+ This library is used for decrypting the one-time passwords into their
+ various components.
+ .
+ This package contains the runtime library for libyubikey.

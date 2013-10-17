@@ -1,0 +1,39 @@
+libyubikey (1.8-1) unstable; urgency=low
+
+  * New upstream version.
+  * Bump debhelper compat to 8.
+    - Adjust argument ordering in debian/rules
+  * Drop unneeded .dirs files.
+  * Add -I$(top_srcdir) to AM_CPPFLAGS to fix FTBFS.
+  * Use dh-autoreconf due to Makefile.am change.
+  * Drop use of chrpath, upstream gets this right now.
+  * Update copyright file.
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Tue, 13 Mar 2012 23:02:48 +0100
+
+libyubikey (1.7-1) unstable; urgency=low
+
+  * New upstream version.  Closes: #591484
+  * Add new symbols from 1.6
+  * Change build system to dh(1)
+  * Add modhex, ykgenerate and ykparse to libyubikey-dev.  Closes: #591486
+  * Strip rpath from modhex, ykgenerate and ykparse.
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Fri, 31 Dec 2010 11:17:08 +0100
+
+libyubikey (1.5-1) unstable; urgency=low
+
+  * New upstream release
+    - Use a linker script to only expose symbols we want to expose
+    - Add new APIs to check validity of hex/modhex strings
+  * Update symbols file to match the versioned objects
+  * Build in a subdirectory rather than in the source directory.
+  * Run tests too.
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Sat, 05 Sep 2009 10:05:40 +0200
+
+libyubikey (1.4-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Tollef Fog Heen <tfheen@debian.org>  Wed, 22 Jul 2009 21:33:05 +0200
