@@ -4,6 +4,7 @@ libyubikey (1.10-1) unstable; urgency=low
   * Add README.source.
   * Add source/format using 3.0 (quilt).
   * Fix lintian binary-control-field-duplicates-source warning.
+  * Add myself as Uploaders.
 
  -- Simon Josefsson <simon@josefsson.org>  Thu, 17 Oct 2013 10:06:18 +0200
 
