@@ -20,7 +20,6 @@ Description: Yubikey OTP library development files
  This package contains the necessary files for developing using libyubikey.
 
 Package: libyubikey0
-Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Yubikey OTP handling library runtime
