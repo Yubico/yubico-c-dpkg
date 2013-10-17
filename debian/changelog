@@ -1,5 +1,6 @@
-libyubikey (1.8-2) unstable; urgency=low
+libyubikey (1.10-1) unstable; urgency=low
 
+  * New upstream version.
   * Add README.source.
   * Add source/format using 3.0 (quilt).
 
