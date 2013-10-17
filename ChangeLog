@@ -1,3 +1,32 @@
+2012-05-31  Klas Lindfors <klas@yubico.com>
+
+	* NEWS: prepare version 1.9
+
+2012-05-31  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS: Add.
+
+2012-05-31  Simon Josefsson <simon@josefsson.org>
+
+	* m4/ld-version-script.m4: Update from gnulib.
+
+2012-05-10  Simon Josefsson <simon@josefsson.org>
+
+	* ykparse.c: Doc fix.
+
+2012-03-13  Tollef Fog Heen <tfheen@err.no>
+
+	* tests/Makefile.am: Add missing -I$(top_srcdir) for out-of-tree
+	builds
+
+2012-03-13  Fredrik Thulin <fredrik@yubico.com>
+
+	* NEWS, configure.ac: Prepare for next release.
+
+2012-03-13  Fredrik Thulin <fredrik@yubico.com>
+
+	* Makefile.am: Fix googlecode_upload.py commands.
+
 2012-03-13  Fredrik Thulin <fredrik@yubico.com>
 
 	* README, simple.mk, test-vectors.txt, ykcrc.c, yktoken.c,
