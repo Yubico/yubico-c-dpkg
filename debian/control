@@ -3,7 +3,7 @@ Priority: optional
 Maintainer: Tollef Fog Heen <tfheen@debian.org>
 Uploaders: Simon Josefsson <simon@josefsson.org>
 Build-Depends: debhelper (>= 8), autotools-dev, dh-autoreconf
-Standards-Version: 3.8.0
+Standards-Version: 3.9.4
 Section: libs
 Homepage: http://code.google.com/p/yubico-c/
 
