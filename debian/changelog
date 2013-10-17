@@ -6,6 +6,7 @@ libyubikey (1.10-1) unstable; urgency=low
   * Fix lintian binary-control-field-duplicates-source warning.
   * Add myself as Uploaders.
   * Upgrade from Standards-Version 3.8.0 to 3.9.4.
+  * Add watch file.
 
  -- Simon Josefsson <simon@josefsson.org>  Thu, 17 Oct 2013 10:06:18 +0200
 
