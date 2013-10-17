@@ -7,6 +7,8 @@ libyubikey (1.10-1) unstable; urgency=low
   * Add myself as Uploaders.
   * Upgrade from Standards-Version 3.8.0 to 3.9.4.
   * Add watch file.
+  * Bump compat to 9 and use debhelper >= 9 to fix lintian
+    warnings hardening-no-relro and hardening-no-fortify-functions.
 
  -- Simon Josefsson <simon@josefsson.org>  Thu, 17 Oct 2013 10:06:18 +0200
 
