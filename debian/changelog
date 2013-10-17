@@ -1,6 +1,7 @@
 libyubikey (1.10-1) unstable; urgency=low
 
   * New upstream version.
+    - Works with recent autotools.  Closes: #713314.
   * Add README.source.
   * Add source/format using 3.0 (quilt).
   * Fix lintian binary-control-field-duplicates-source warning.
