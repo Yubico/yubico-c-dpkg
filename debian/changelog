@@ -1,6 +1,7 @@
 libyubikey (1.11-1) unstable; urgency=low
 
   * New upstream version.
+    - Adds manpages.
 
  -- Simon Josefsson <simon@josefsson.org>  Sat, 19 Oct 2013 00:16:18 +0200
 
