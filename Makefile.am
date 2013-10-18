@@ -1,5 +1,5 @@
 # Written by Simon Josefsson <simon@josefsson.org>.
-# Copyright (c) 2006-2012 Yubico AB
+# Copyright (c) 2006-2013 Yubico AB
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,6 +29,8 @@
 SUBDIRS=. tests
 
 ACLOCAL_AMFLAGS = -I m4
+
+DISTCHECK_CONFIGURE_FLAGS = --enable-gcc-warnings
 
 AM_CFLAGS = $(WARN_CFLAGS)
 
@@ -61,6 +63,8 @@ ykparse_LDADD = ./libyubikey.la
 ykgenerate_SOURCES = ykgenerate.c
 ykgenerate_LDADD = ./libyubikey.la
 
+dist_man1_MANS = modhex.1 ykparse.1 ykgenerate.1
+
 # Release
 
 EXTRA_DIST = simple.mk THANKS
@@ -71,12 +75,16 @@ ChangeLog:
 PROJECT = yubico-c
 
 release:
-	@if test -z "$(USER)" || test -z "$(KEYID)"; then \
+	@if test -z "$(KEYID)"; then \
 		echo "Try this instead:"; \
-		echo "  make release USER=[GOOGLEUSERNAME] KEYID=[PGPKEYID]"; \
+		echo "  make release KEYID=[PGPKEYID]"; \
 		echo "For example:"; \
-		echo "  make release USER=simonyubico@gmail.com KEYID=2117364A"; \
-		echo "  make release USER=fredrikyubico@gmail.com KEYID=4EAA4232"; \
+		echo "  make release KEYID=2117364A"; \
+		exit 1; \
+	fi
+	@if test ! -d "$(YUBICO_GITHUB_REPO)"; then \
+		echo "yubico.github.com repo not found!"; \
+		echo "Make sure that YUBICO_GITHUB_REPO is set"; \
 		exit 1; \
 	fi
 	@head -3 $(srcdir)/NEWS | grep -q "Version $(VERSION) .released `date -I`" || \
@@ -88,13 +96,4 @@ release:
 	cd $(srcdir) && git push
 	cd $(srcdir) && git tag -u $(KEYID)! -m $(VERSION) $(PACKAGE)-$(VERSION)
 	cd $(srcdir) && git push --tags
-	mkdir -p ../releases/$(PACKAGE)/ && \
-		cp -v $(PACKAGE)-$(VERSION).tar.gz* ../releases/$(PACKAGE)/
-	googlecode_upload.py -s "OpenPGP signature for $(PACKAGE) $(VERSION)." \
-	 -p $(PROJECT) -u $(USER) $(PACKAGE)-$(VERSION).tar.gz.sig
-	googlecode_upload.py -s "$(PACKAGE) $(VERSION)" \
-	 -p $(PROJECT) -u $(USER) $(PACKAGE)-$(VERSION).tar.gz
-	test -d ../wiki-$(PROJECT) && \
-		cp README ../wiki-$(PROJECT)/ReadMe.wiki && \
-		cd ../wiki-$(PROJECT) && \
-		git commit -m Sync. ReadMe.wiki
+	$(YUBICO_GITHUB_REPO)/publish $(PROJECT) $(VERSION) $(PACKAGE)-$(VERSION).tar.gz*

@@ -1,3 +1,81 @@
+2013-10-18  Simon Josefsson <simon@josefsson.org>
+
+	* Makefile.am: Fix release target.
+
+2013-10-18  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS: Version 1.11.
+
+2013-10-18  Simon Josefsson <simon@josefsson.org>
+
+	* README: Doc fix.
+
+2013-10-17  Simon Josefsson <simon@josefsson.org>
+
+	* Makefile.am: Dist more man pages.  Run distcheck with warning
+	flags enabled.
+
+2013-10-17  Simon Josefsson <simon@josefsson.org>
+
+	* .gitignore: Fix git ignores.
+
+2013-10-17  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS, tests/Makefile.am: Run tests under valgrind.
+
+2013-10-17  Simon Josefsson <simon@josefsson.org>
+
+	* configure.ac, m4/valgrind-tests.m4: Minor configure.ac fixes.
+
+2013-10-17  Simon Josefsson <simon@josefsson.org>
+
+	* Makefile.am, NEWS, README, modhex.1, ykgenerate.1, ykparse.1: Add
+	man pages.  Improve README.
+
+2013-10-17  Simon Josefsson <simon@josefsson.org>
+
+	* .gitignore: Ignore more.
+
+2013-10-11  Simon Josefsson <simon@josefsson.org>
+
+	* README: Improve README.
+
+2013-09-26  Klas Lindfors <klas@yubico.com>
+
+	* .gitignore: ignore release files
+
+2013-09-26  Klas Lindfors <klas@yubico.com>
+
+	* BLURB: add category to BLURB
+
+2013-09-23  Klas Lindfors <klas@yubico.com>
+
+	* README: add asciidoc heading to README
+
+2013-09-21  Simon Josefsson <simon@josefsson.org>
+
+	* BLURB: Fix.
+
+2013-09-21  Simon Josefsson <simon@josefsson.org>
+
+	* BLURB: Add.
+
+2013-04-22  Dain Nilsson <dain@yubico.com>
+
+	* Makefile.am: Fix release publishing.
+
+2013-04-10  Dain Nilsson <dain@yubico.com>
+
+	* Makefile.am: Updated artifact publishing in Makefile.
+
+2013-04-05  Dain Nilsson <dain@yubico.com>
+
+	* Makefile.am: Move releases to yubico.github.com
+
+2013-03-12  Klas Lindfors <klas@yubico.com>
+
+	* NEWS, configure.ac: bump versions post-release
+
 2013-03-12  Klas Lindfors <klas@yubico.com>
 
 	* configure.ac: bump LT_REVISION
