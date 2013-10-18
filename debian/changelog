@@ -1,3 +1,9 @@
+libyubikey (1.11-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Simon Josefsson <simon@josefsson.org>  Sat, 19 Oct 2013 00:16:18 +0200
+
 libyubikey (1.10-1) unstable; urgency=low
 
   * New upstream version.
