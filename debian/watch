@@ -1,2 +1,2 @@
 version=3
-http://yubico.github.io/yubico-c/releases.html .*/libyubikey-(\d[\d.]*)\.tar\.gz
+http://opensource.yubico.com/yubico-c/releases.html .*/libyubikey-(\d[\d.]*)\.tar\.gz
