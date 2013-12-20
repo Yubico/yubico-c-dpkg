@@ -3,9 +3,9 @@ libyubikey (1.11-1) unstable; urgency=low
   * New upstream version.
     - Adds manpages.
   * Upgrade to Standards-Version 3.9.5.
-  * Improve watch file.
+  * Improve watch file (pgpsigurlmangle).
 
- -- Simon Josefsson <simon@josefsson.org>  Tue, 17 Dec 2013 15:10:22 +0100
+ -- Simon Josefsson <simon@josefsson.org>  Fri, 20 Dec 2013 14:53:37 +0100
 
 libyubikey (1.10-1) unstable; urgency=low
 
