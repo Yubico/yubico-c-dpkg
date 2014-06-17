@@ -1,3 +1,47 @@
+2014-06-11  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS: Version 1.12.
+
+2014-06-11  Simon Josefsson <simon@josefsson.org>
+
+	* Makefile.am: Improve release target.
+
+2014-06-11  Simon Josefsson <simon@josefsson.org>
+
+	* .gitignore, Makefile.am, NEWS, configure.ac, modhex.1,
+	modhex.1.txt, ykgenerate.1, ykgenerate.1.txt, ykparse.1,
+	ykparse.1.txt: Asciidocify man pages.
+
+2013-12-17  Klas Lindfors <klas@yubico.com>
+
+	* ykgenerate.c: no need to loop through otp to print it, just print
+	it
+
+2013-12-17  Klas Lindfors <klas@yubico.com>
+
+	* ykgenerate.c: make otp variable large enough as yubikey_generate() called yubikey_modhex_encode() which adds \0
+	otp must be YUBIKEY_OTP_SIZE + 1
+
+2013-10-18  Simon Josefsson <simon@josefsson.org>
+
+	* README, configure.ac: Cleanups.
+
+2013-10-18  Simon Josefsson <simon@josefsson.org>
+
+	* ykaes.c: Drop C++ comments.
+
+2013-10-18  Simon Josefsson <simon@josefsson.org>
+
+	* Makefile.am, tests/selftest.c, ykaes.c, yubikey.h: Indent code.
+
+2013-10-18  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS, configure.ac: Bump versions.
+
+2013-10-18  Simon Josefsson <simon@josefsson.org>
+
+	* Makefile.am: Fix release target.
+
 2013-10-18  Simon Josefsson <simon@josefsson.org>
 
 	* Makefile.am: Fix release target.

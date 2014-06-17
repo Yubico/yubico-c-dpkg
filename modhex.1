@@ -1,70 +1,102 @@
-.\" Copyright (c) 2013 Yubico AB
-.\" All rights reserved.
+'\" t
+.\"     Title: modhex
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: Version 1.12
+.\"    Manual: YubiKey C Library Manual
+.\"    Source: yubico-c
+.\"  Language: English
 .\"
-.\" Redistribution and use in source and binary forms, with or without
-.\" modification, are permitted provided that the following conditions are
-.\" met:
-.\"
-.\"   * Redistributions of source code must retain the above copyright
-.\"      notice, this list of conditions and the following disclaimer.
-.\"
-.\"   * Redistributions in binary form must reproduce the above
-.\"      copyright notice, this list of conditions and the following
-.\"      disclaimer in the documentation and/or other materials provided
-.\"      with the distribution.
-.\"
-.\" THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-.\" "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-.\" LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-.\" A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-.\" OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-.\" SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-.\" LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-.\" OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-.TH MODHEX 1 "October 2013" yubico\-c "User Commands"
-.SH NAME
+.TH "MODHEX" "1" "Version 1\&.12" "yubico\-c" "YubiKey C Library Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
 modhex \- convert data to/from modhex encoding
-.SH SYNOPSIS
-.B modhex
-.B [
-.I \-d
-.B ]
-.B [
-.I \-h
-.B ]
-DATA
-.SH DESCRIPTION
-The modhex tool encode/decode modhex data to binary and hex.
-.SH OPTIONS
-The string DATA is the data to convert.
-.TP
+.SH "SYNOPSIS"
+.sp
+\fBmodhex\fR [\-d] [\-h] \fIDATA\fR
+.SH "DESCRIPTION"
+.sp
+Encode/decode modhex data \fIDATA\fR to binary and hex\&.
+.SH "OPTIONS"
+.sp
+The string DATA is the data to convert\&.
+.PP
 \fB\-d\fR
-Decode data (the default is to encode data)
-.TP
+.RS 4
+Decode data (the default is to encode data)\&.
+.RE
+.PP
 \fB\-h\fR
-Use hex encoding for all non\-modhex data.
-.SH EXAMPLES
+.RS 4
+Use hex encoding for all non\-modhex data\&.
+.RE
+.SH "EXAMPLES"
+.sp
 ModHex encode ASCII\-string "test":
-.RS
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
 modhex test
+.fi
+.if n \{\
 .RE
-.TP
+.\}
+.sp
 Decode ModHex data "ifhgieif" into ASCII string:
-.RS
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
 modhex \-d ifhgieif
+.fi
+.if n \{\
 .RE
-.TP
+.\}
+.sp
 ModHex encode hex\-encoded data "b565716f":
-.RS
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
 modhex \-h b565716f
+.fi
+.if n \{\
 .RE
-.TP
+.\}
+.sp
 Decode ModHex data "nghgibhv" and print hex\-encode data:
-.RS
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
 modhex \-d \-h nghgibhv
+.fi
+.if n \{\
 .RE
+.\}
 .SH "SEE ALSO"
-YubiKeys can be obtained from Yubico: http://www.yubico.com/
+.sp
+YubiKeys can be obtained from Yubico: http://www\&.yubico\&.com/

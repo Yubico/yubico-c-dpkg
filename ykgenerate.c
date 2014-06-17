@@ -43,7 +43,7 @@ int
 main (int argc, char *argv[])
 {
   uint8_t key[YUBIKEY_KEY_SIZE];
-  char otp[YUBIKEY_OTP_SIZE];
+  char otp[YUBIKEY_OTP_SIZE + 1];
   char *aeskey, *yk_internalname, *yk_counter, *yk_low, *yk_high, *yk_use;
   yubikey_token_st tok;
 
@@ -137,14 +137,7 @@ main (int argc, char *argv[])
 
   yubikey_generate ((void *) &tok, key, otp);
 
-  {
-    size_t i;
-
-    for (i = 0; i < 32; i++)
-      printf ("%c", otp[i]);
-
-    printf ("\n");
-  }
+  printf ("%s\n", otp);
 
   return EXIT_SUCCESS;
 }

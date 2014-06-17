@@ -1,5 +1,5 @@
 # Written by Simon Josefsson <simon@josefsson.org>.
-# Copyright (c) 2006-2013 Yubico AB
+# Copyright (c) 2006-2014 Yubico AB
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -63,11 +63,21 @@ ykparse_LDADD = ./libyubikey.la
 ykgenerate_SOURCES = ykgenerate.c
 ykgenerate_LDADD = ./libyubikey.la
 
-dist_man1_MANS = modhex.1 ykparse.1 ykgenerate.1
+dist_man_MANS = modhex.1 ykparse.1 ykgenerate.1
+DISTCLEANFILES = $(dist_man_MANS)
 
-# Release
+SUFFIXES = .1.txt .1
+.1.txt.1:
+	$(A2X) --format=manpage -a revdate="Version $(VERSION)" $<
 
-EXTRA_DIST = simple.mk THANKS
+MANSOURCES = modhex.1.txt ykparse.1.txt ykgenerate.1.txt
+EXTRA_DIST = $(MANSOURCES) simple.mk THANKS
+
+# Maintainer rules
+
+indent:
+	indent *.c *.h tests/*.c
+	indent *.c *.h tests/*.c
 
 ChangeLog:
 	cd $(srcdir) && git2cl > ChangeLog
@@ -94,6 +104,7 @@ release:
 	gpg --detach-sign --default-key $(KEYID) $(PACKAGE)-$(VERSION).tar.gz
 	gpg --verify $(PACKAGE)-$(VERSION).tar.gz.sig
 	cd $(srcdir) && git push
-	cd $(srcdir) && git tag -u $(KEYID)! -m $(VERSION) $(PACKAGE)-$(VERSION)
+	cd $(srcdir) && git tag -u $(KEYID) -m $(VERSION) $(PACKAGE)-$(VERSION)
 	cd $(srcdir) && git push --tags
+	$(YUBICO_GITHUB_REPO)/save-mans $(PROJECT) $(MANSOURCES)
 	$(YUBICO_GITHUB_REPO)/publish $(PROJECT) $(VERSION) $(PACKAGE)-$(VERSION).tar.gz*
