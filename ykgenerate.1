@@ -1,64 +1,86 @@
-.\" Copyright (c) 2013 Yubico AB
-.\" All rights reserved.
+'\" t
+.\"     Title: ykparse
+.\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
+.\" Generator: DocBook XSL Stylesheets v1.76.1 <http://docbook.sf.net/>
+.\"      Date: Version 1.12
+.\"    Manual: YubiKey C Library Manual
+.\"    Source: yubico-c
+.\"  Language: English
 .\"
-.\" Redistribution and use in source and binary forms, with or without
-.\" modification, are permitted provided that the following conditions are
-.\" met:
-.\"
-.\"   * Redistributions of source code must retain the above copyright
-.\"      notice, this list of conditions and the following disclaimer.
-.\"
-.\"   * Redistributions in binary form must reproduce the above
-.\"      copyright notice, this list of conditions and the following
-.\"      disclaimer in the documentation and/or other materials provided
-.\"      with the distribution.
-.\"
-.\" THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-.\" "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-.\" LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-.\" A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-.\" OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-.\" SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-.\" LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-.\" OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-.TH YKGENERATE 1 "October 2013" yubico\-c "User Commands"
-.SH NAME
+.TH "YKPARSE" "1" "Version 1\&.12" "yubico\-c" "YubiKey C Library Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
 ykgenerate \- construct and encrypt an OTP from given data
-.SH SYNOPSIS
-.B ykgenerate
-\fIAESKEY YK_INTERNALNAME YK_COUNTER YK_LOW YK_HIGH YK_USE\fR
-.SH DESCRIPTION
+.SH "SYNOPSIS"
+.sp
+\fBykgenerate\fR \fIAESKEY\fR \fIYK_INTERNALNAME\fR \fIYK_COUNTER\fR \fIYK_LOW\fR \fIYK_HIGH\fR \fIYK_USE\fR
+.SH "DESCRIPTION"
+.sp
+Generate OTPs by encrypting given values under the given encryption key\&.
+.SH "OPTIONS"
 .PP
-The ykgenerate tool generate OTPs by encrypting given values under the
-given encryption key.
-.SH OPTIONS
-.TP
 \fBAESKEY\fR
-Hex encoded AES\-key.
-.TP
-\fBYK_INTERNALNAME\fR
-Hex encoded internal identity (48 bit).
-.TP
-\fBYK_COUNTER\fR
-Hex encoded counter (16 bit).
-.TP
-\fBYK_LOW\fR
-Hex encoded timestamp low (16 bit).
-.TP
-\fBYK_HIGH\fR
-Hex encoded timestamp high (8bit).
-.TP
-\fBYK_USE\fR
-Hex encoded use (8 bit).
-.SH EXAMPLES
-Typical usage of the tool is as follows (be careful with linewrapping
-of the manpage).
-.RS
-ykgenerate ecde18dbe76fbd0c33330f1c354871db 8792ebfe26cc 0013 c0a8 00 10
+.RS 4
+The 16\-character AES\-128 key to use in hex\&.
 .RE
-The expected output is the string "hcfktknicvbcnhbkvigcfhgddhhhrknc".
+.PP
+\fBYK_INTERNALNAME\fR
+.RS 4
+Hex encoded internal identity (48 bit)\&.
+.RE
+.PP
+\fBYK_COUNTER\fR
+.RS 4
+Hex encoded counter (16 bit)\&.
+.RE
+.PP
+\fBYK_LOW\fR
+.RS 4
+Hex encoded timestamp low (16 bit)\&.
+.RE
+.PP
+\fBYK_HIGH\fR
+.RS 4
+Hex encoded timestamp high (8bit)\&.
+.RE
+.PP
+\fBYK_USE\fR
+.RS 4
+Hex encoded use (8 bit)\&.
+.RE
+.SH "EXAMPLES"
+.sp
+Typical usage of the tool is as follows\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+ykgenerate ecde18dbe76fbd0c33330f1c354871db 8792ebfe26cc 0013 c0a8 00 10
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Use ykparse(1) to decode the resulting OTP\&.
 .SH "SEE ALSO"
-YubiKeys can be obtained from Yubico: http://www.yubico.com/
+.sp
+YubiKeys can be obtained from Yubico: http://www\&.yubico\&.com/
