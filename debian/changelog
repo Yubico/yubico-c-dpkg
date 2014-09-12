@@ -1,6 +1,7 @@
 libyubikey (1.12-2) unstable; urgency=low
 
   * Fix watch file.
+  * Update upstream-signing-key.pgp.
 
  -- Simon Josefsson <simon@josefsson.org>  Fri, 12 Sep 2014 22:05:39 +0200
 
