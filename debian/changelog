@@ -3,8 +3,10 @@ libyubikey (1.12-2) unstable; urgency=low
   * Fix watch file.
   * Update upstream-signing-key.pgp.
   * Reformat copyright file.
+  * Update Standards-Version to 3.9.6.
+  * Fix Homepage: URL.
 
- -- Simon Josefsson <simon@josefsson.org>  Fri, 12 Sep 2014 22:05:39 +0200
+ -- Simon Josefsson <simon@josefsson.org>  Wed, 01 Oct 2014 18:24:28 +0200
 
 libyubikey (1.12-1) unstable; urgency=low
 
