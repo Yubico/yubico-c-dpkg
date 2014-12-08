@@ -1,2 +1,2 @@
 version=3
-opts=pgpsigurlmangle=s/$/.sig/ https://developers.yubico.com/yubico-c/releases.html .*/libyubikey-(\d[\d.]*)\.tar\.gz
+opts=pgpsigurlmangle=s/$/.sig/ https://developers.yubico.com/yubico-c/Releases/ libyubikey-(\d[\d.]*)\.tar\.gz
