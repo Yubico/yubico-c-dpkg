@@ -1,3 +1,107 @@
+2015-03-05  Klas Lindfors <klas@yubico.com>
+
+	* NEWS: NEWS for 1.13
+
+2014-12-01  Henrik Stråth <minisu@users.noreply.github.com>
+
+	* NEWS: Update NEWS
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* tests/selftest.c: add a bunch of test cases for the crc
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* tests/selftest.c: refactor aes/otp tests to be their own functions
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* tests/selftest.c: refactor hex/modhex tests to more functions
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* tests/Makefile.am: enable warnings for the tests
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* tests/selftest.c: use asserts for tests
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* tests/selftest.c, ykhex.c: indent fixups make indent..
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* tests/selftest.c: fixup text in test
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* tests/selftest.c: _decode() takes destination size as third
+	parameter
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* Makefile.am, ykhex.c, ykmodhex.c: refactor to make hex and modhex
+	use the same code
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* ykhex.c: fix so we can decode a hex string with uneven amount of
+	characters shown broken in test in last commit
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* tests/selftest.c: add a test for decoding an ueven amount of hex
+	characters this test will fail
+
+2014-11-26  Klas Lindfors <klas@yubico.com>
+
+	* tests/selftest.c: clean up tests a bit don't use same buffer for encode and decode
+
+2014-10-29  Henrik Stråth <minisu@users.noreply.github.com>
+
+	* README: Update README
+
+2014-10-29  Henrik Stråth <minisu@users.noreply.github.com>
+
+	* README: Update README
+
+2014-10-29  Henrik Stråth <minisu@users.noreply.github.com>
+
+	* README: Update README
+
+2014-10-29  Henrik Stråth <henrik@yubico.com>
+
+	* README.adoc: symlinked README
+
+2014-09-12  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS, configure.ac: Bump version.
+
+2014-09-04  Simon Josefsson <simon@josefsson.org>
+
+	* Makefile.am: Abstract.
+
+2014-09-04  Simon Josefsson <simon@josefsson.org>
+
+	* BLURB: Fix URL.
+
+2014-08-27  Simon Josefsson <simon@josefsson.org>
+
+	* : Merge pull request #8 from eloj/modhex-printf-format-fix Change induction variable type for compatibility
+
+2014-06-11  Klas Lindfors <klas@yubico.com>
+
+	* .travis.yml: let travis install fewer packages
+
+2014-06-11  Klas Lindfors <klas@yubico.com>
+
+	* .travis.yml: let travis install asciidoc for the build
+
+2014-06-11  Simon Josefsson <simon@josefsson.org>
+
+	* README: Doc fix.
+
 2014-06-11  Simon Josefsson <simon@josefsson.org>
 
 	* NEWS: Version 1.12.
@@ -235,7 +339,7 @@
 
 2012-03-13  Simon Josefsson <simon@josefsson.org>
 
-	* selftest.c, simple.mk, tests/selftest.c: Make last commit work.
+	* simple.mk, selftest.c => tests/selftest.c: Make last commit work.
 	Update simple.mk too.
 
 2012-03-12  Fredrik Thulin <fredrik@yubico.com>
@@ -489,7 +593,7 @@
 
 2009-03-25  Simon Josefsson <simon@josefsson.org>
 
-	* Makefile.am, simple.mk, ykparse.c, yubikey.c: Separate ykparse
+	* Makefile.am, simple.mk, yubikey.c => ykparse.c: Separate ykparse
 	function.
 
 2009-03-25  Simon Josefsson <simon@josefsson.org>
@@ -585,7 +689,7 @@
 
 2008-06-10  Simon Josefsson <simon@josefsson.org>
 
-	* Makefile.am, Makefile.simple, simple.mk: Rename simple.mk.
+	* Makefile.am, Makefile.simple => simple.mk: Rename simple.mk.
 
 2008-06-10  Simon Josefsson <simon@josefsson.org>
 
@@ -601,8 +705,8 @@
 
 2008-06-10  Simon Josefsson <simon@josefsson.org>
 
-	* Makefile.am, Makefile.simple, README, ykdebug.c, yubikey-debug.c: 
-	Rename to ykdebug.
+	* Makefile.am, Makefile.simple, README, yubikey-debug.c =>
+	ykdebug.c: Rename to ykdebug.
 
 2008-06-10  Simon Josefsson <simon@josefsson.org>
 
@@ -610,7 +714,7 @@
 
 2008-06-10  Simon Josefsson <simon@josefsson.org>
 
-	* sefltest.c, selftest.c: Fix typo.
+	* sefltest.c => selftest.c: Fix typo.
 
 2008-06-10  Simon Josefsson <simon@josefsson.org>
 
@@ -618,7 +722,7 @@
 
 2008-06-10  Simon Josefsson <simon@josefsson.org>
 
-	* README, tool.c, yubikey-debug.c: Rename, use new namespace.
+	* README, tool.c => yubikey-debug.c: Rename, use new namespace.
 
 2008-06-10  Simon Josefsson <simon@josefsson.org>
 
@@ -634,8 +738,8 @@
 
 2008-06-10  Simon Josefsson <simon@josefsson.org>
 
-	* Makefile, Makefile.am, Makefile.simple, pof-test.c, pof.c, pof.h,
-	sefltest.c, yubikey.c, yubikey.h: Rename.
+	* Makefile.am, Makefile => Makefile.simple, pof-test.c =>
+	sefltest.c, pof.c => yubikey.c, pof.h => yubikey.h: Rename.
 
 2008-06-10  Simon Josefsson <simon@josefsson.org>
 
