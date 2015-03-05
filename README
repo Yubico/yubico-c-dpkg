@@ -2,16 +2,7 @@ YubiKey C Library: libyubikey
 =============================
 
 This package make up the low-level C software development kit for the
-Yubico YubiKey authentication device.  See https://www.yubico.com/ for
-more information about Yubico and the YubiKey.
-
-License
--------
-
-The project is licensed under a BSD license.  See the file COPYING for
-exact wording.  For any copyright year range specified as YYYY-ZZZZ in
-this package note that the range specifies every single year in that
-closed interval.
+Yubico https://www.yubico.com[YubiKey] authentication device.
 
 Building
 --------
@@ -34,7 +25,7 @@ Building from version controlled sources
 Warning!  This is only for developers and if you don't understand what
 you are doing, you should download the release files instead.
 
-You may check out the sources using GIT with the following command:
+You may check out the sources using Git with the following command:
 
   git clone git://github.com/Yubico/yubico-c.git
 
@@ -43,8 +34,9 @@ This will create a directory 'yubico-c'.  Enter the directory:
   cd yubico-c
 
 Recent versions of autoconf, automake and libtool must be installed,
-if you want to use the normal ./configure based approach.  Use
-simple.mk if you don't want this step.
+if you want to use the normal ./configure based approach.  AsciiDoc's
+a2x tool is also required for building the man pages.  (See simple.mk
+if you want a slimmed down non-autoconf build approach.)
 
 Generate the build system:
 
@@ -55,17 +47,18 @@ Then refer to the user sections above regarding building.
 Command-line tools
 ------------------
 
-The "modhex" program converts data between modhex, normal hex, and
+The 'modhex' program converts data between modhex, normal hex, and
 binary form.
 
-The "ykparse" program decrypts and parses one OTP given the OTP and
+The 'ykparse' program decrypts and parses one OTP given the OTP and
 the AES key corresponding to that YubiKey.
 
-The "ykgenerate" program constructs and encrypts one OTP given AES key
+The 'ykgenerate' program constructs and encrypts one OTP given AES key
 and internal data values.
 
 Example usage:
 
+[source, sh]
 -------
   $ ./modhex test
   ifhgieif
@@ -153,3 +146,11 @@ Example usage:
     crc check: ok
   $
 -------
+
+License
+-------
+
+The project is licensed under a BSD license.  See the file COPYING for
+exact wording.  For any copyright year range specified as YYYY-ZZZZ in
+this package note that the range specifies every single year in that
+closed interval.

@@ -39,7 +39,7 @@ AM_CFLAGS = $(WARN_CFLAGS)
 lib_LTLIBRARIES = libyubikey.la
 include_HEADERS = yubikey.h
 
-libyubikey_la_SOURCES = yktoken.c ykhex.c ykmodhex.c ykcrc.c ykaes.c
+libyubikey_la_SOURCES = yktoken.c ykhex.c ykcrc.c ykaes.c
 libyubikey_la_SOURCES += libyubikey.map
 libyubikey_la_LDFLAGS = -no-undefined \
 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
@@ -92,9 +92,9 @@ release:
 		echo "  make release KEYID=2117364A"; \
 		exit 1; \
 	fi
-	@if test ! -d "$(YUBICO_GITHUB_REPO)"; then \
-		echo "yubico.github.com repo not found!"; \
-		echo "Make sure that YUBICO_GITHUB_REPO is set"; \
+	@if test ! -d "$(YUBICO_WWW_REPO)"; then \
+		echo "yubico www repo not found!"; \
+		echo "Make sure that YUBICO_WWW_REPO is set"; \
 		exit 1; \
 	fi
 	@head -3 $(srcdir)/NEWS | grep -q "Version $(VERSION) .released `date -I`" || \
@@ -106,5 +106,5 @@ release:
 	cd $(srcdir) && git push
 	cd $(srcdir) && git tag -u $(KEYID) -m $(VERSION) $(PACKAGE)-$(VERSION)
 	cd $(srcdir) && git push --tags
-	$(YUBICO_GITHUB_REPO)/save-mans $(PROJECT) $(MANSOURCES)
-	$(YUBICO_GITHUB_REPO)/publish $(PROJECT) $(VERSION) $(PACKAGE)-$(VERSION).tar.gz*
+	$(YUBICO_WWW_REPO)/save-mans $(PROJECT) $(MANSOURCES)
+	$(YUBICO_WWW_REPO)/publish $(PROJECT) $(VERSION) $(PACKAGE)-$(VERSION).tar.gz*
