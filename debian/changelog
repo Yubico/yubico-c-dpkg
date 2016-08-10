@@ -4,8 +4,9 @@ libyubikey (1.13-2) unstable; urgency=low
   * Use https URLs in Vcs-Git.
   * Update Standards-Version from 3.9.6 to 3.9.8.
   * Add debian/gbp.conf.
+  * Build with hardening=+all.
 
- -- Simon Josefsson <simon@josefsson.org>  Thu, 05 Mar 2015 13:54:30 +0100
+ -- Simon Josefsson <simon@josefsson.org>  Wed, 10 Aug 2016 18:12:52 +0200
 
 libyubikey (1.13-1) unstable; urgency=low
 
